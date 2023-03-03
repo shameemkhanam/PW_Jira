@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Create Project</h2>
+<div mat-dialog-content>
+  <form [formGroup]="todoForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Project Name</mat-label>
+      <input matInput placeholder="project name" formControlName="projectName">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Status</mat-label>
+      <mat-select placeholder="type" formControlName="status">
+        <mat-option value="Todo">Todo</mat-option>
+        <mat-option value="In Progress">In Progress</mat-option>
+        <mat-option value="Done">Done</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Summary</mat-label>
+      <textarea matInput formControlName="summary"></textarea>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+  <button class="me-2 mb-3" mat-raised-button color="accent" mat-dialog-close>Cancel</button>
+  <button class="me-4 mb-3" mat-raised-button color="primary" (click)="addProject()">{{actionBtn}}</button>
+</div>
